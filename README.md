@@ -11,3 +11,5 @@ You will get score based on your moves
   1 star for >20 moves
 
 You can press reset button to reset your progress and play game again.
+
+https://memorygame.captaintorch.tech
