@@ -33,7 +33,6 @@ function gameInit() {
 
     for (let i = 0; i < allCards.length; i++) {
         allCards[i].innerHTML = '';
-        allCards[i].style.pointerEvents = '';
     }
 
     let shuffledCards = shuffle(cards);
@@ -207,5 +206,8 @@ function restartGame() {
     stars[2].style.color = 'white';
     clearInterval(timer);
     clearTimeout(timeOut);
+    for (let a = 0; a < allCards.length; a++) {
+        allCards[a].style = null;
+    }
     gameInit();
 }
