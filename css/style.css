@@ -86,9 +86,17 @@ body {
     transform: rotateY(180deg);
 }
 
+.start {
+    margin: 0 0 10px 0;
+}
+
 #start {
-    padding-left: 10px;
+    cursor: pointer;
+    font-size: 1.5rem !important;
+    border-radius: 10px;
+    padding: 5px;
     color: black;
+    font-weight: bold;
     width: 30px;
     background-color: white;
     border: none;
@@ -104,4 +112,8 @@ body {
 
 .scorePanel {
     width: 500px;
+}
+
+#reset {
+    cursor: pointer;
 }
