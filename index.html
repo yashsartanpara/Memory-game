@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Memory Game</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<div id="details">
+    <!--Heading-->
+    <header>
+        <div class="center-align">
+            <div class="header">
+                <header>
+                    <h1>Memory game</h1>
+                </header>
+            </div>
+        </div>
+    </header>
+    <!--Control panel-->
+    <section class="scorePanel">
+        <div id="score">
+            <div class="start">
+                <i id="start" class="fa fa-caret-right fa-1x"></i>
+            </div>
+            <div class="star">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <div id="moves">
+                Moves
+            </div>
+            <div id="reset">
+                <i class="fa fa-repeat fa-1x"></i>
+            </div>
+            <div class="time">
+                <span id="time">00:00</span>
+            </div>
+        </div>
+    </section>
+    <!--Game Cards-->
+    <div id="game" class="game">
+        <div class="card">
+        </div>
+        <div class="card">
+        </div>
+        <div class="card">
+        </div>
+        <div class="card">
+        </div>
+        <div class="card">
+        </div>
+        <div class="card">
+        </div>
+        <div class="card">
+        </div>
+        <div class="card">
+        </div>
+        <div class="card">
+        </div>
+        <div class="card">
+        </div>
+        <div class="card">
+        </div>
+        <div class="card">
+        </div>
+        <div class="card">
+        </div>
+        <div class="card">
+        </div>
+        <div class="card">
+        </div>
+        <div class="card">
+        </div>
+    </div>
+    <!--Result Window-->
+    <div id="result">
+        <h1>Congratulations.</h1>
+        <div id="timeTaken"></div>
+        <div id="totalMoves"></div>
+        <div id="playAgain">
+            <i class="fa fa-repeat fa-1x"></i>
+        </div>
+    </div>
+</div>
+
+<script src="js/index.js"></script>
+</body>
+</html>

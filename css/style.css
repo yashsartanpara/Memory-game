@@ -1,0 +1,105 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+}
+
+.match {
+    display: block !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+#result {
+    padding: 100px;
+    z-index: 50;
+    background-color: black;
+    position: absolute;
+    display: none;
+    height: 500px;
+    width: 500px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card {
+    height: 150px;
+    width: 150px;
+    background-color: crimson;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px #333333;
+    transition: transform 0.2s linear;
+}
+
+.game {
+    background-color: whitesmoke;
+    width: 700px;
+    min-height: 700px;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#score {
+    font-size: 2rem;
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.rotated {
+    transform: rotateY(180deg);
+}
+
+#start {
+    padding-left: 10px;
+    color: black;
+    width: 30px;
+    background-color: white;
+    border: none;
+}
+
+#score .star {
+    color: whitesmoke;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.scorePanel {
+    width: 500px;
+}
