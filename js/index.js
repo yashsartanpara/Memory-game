@@ -1,22 +1,22 @@
-let cards = ['fa fa-facebook fa-4x rotated hide', 'fa fa-facebook fa-4x rotated hide', 'fa fa-google fa-4x rotated hide', 'fa fa-google fa-4x rotated hide', 'fa fa-apple fa-4x rotated hide', 'fa fa-apple fa-4x rotated hide', 'fa fa-github fa-4x rotated hide', 'fa fa-github fa-4x rotated hide', 'fa fa-codepen fa-4x rotated hide', 'fa fa-codepen fa-4x rotated hide', 'fa fa-slack fa-4x rotated hide', 'fa fa-slack fa-4x rotated hide', 'fa fa-twitter fa-4x rotated hide', 'fa fa-twitter fa-4x rotated hide', 'fa fa-free-code-camp fa-4x rotated hide', 'fa fa-free-code-camp fa-4x rotated hide'];
-let openCards = [];
-let moves = 0;
-let match = 0;
-let mins = 0, secs = 0;
-let timer, timeOut;
-let currentTime;
-let gameBoard = document.getElementById('game');
-let moveDisplay = document.getElementById('moves');
-let start = document.getElementById('start');
-let restart = document.getElementById('reset');
-let playAgain = document.getElementById('playAgain');
-let result = document.getElementById('result');
-let totalMoves = document.getElementById('totalMoves');
-let timeTaken = document.getElementById('timeTaken');
-let stars = document.getElementsByClassName('fa fa-star');
-let leader = document.getElementById('leader');
-let clearLeader = document.getElementById('clearLeader');
-let localValue, localData;
+let cards = ['fa fa-facebook fa-4x rotated hide', 'fa fa-facebook fa-4x rotated hide', 'fa fa-google fa-4x rotated hide', 'fa fa-google fa-4x rotated hide', 'fa fa-apple fa-4x rotated hide', 'fa fa-apple fa-4x rotated hide', 'fa fa-github fa-4x rotated hide', 'fa fa-github fa-4x rotated hide', 'fa fa-codepen fa-4x rotated hide', 'fa fa-codepen fa-4x rotated hide', 'fa fa-slack fa-4x rotated hide', 'fa fa-slack fa-4x rotated hide', 'fa fa-twitter fa-4x rotated hide', 'fa fa-twitter fa-4x rotated hide', 'fa fa-free-code-camp fa-4x rotated hide', 'fa fa-free-code-camp fa-4x rotated hide'],
+    openCards = [],
+    moves = 0,
+    match = 0,
+    mins = 0, secs = 0,
+    timer, timeOut,
+    currentTime,
+    gameBoard = document.getElementById('game'),
+    moveDisplay = document.getElementById('moves'),
+    start = document.getElementById('start'),
+    restart = document.getElementById('reset'),
+    playAgain = document.getElementById('playAgain'),
+    result = document.getElementById('result'),
+    totalMoves = document.getElementById('totalMoves'),
+    timeTaken = document.getElementById('timeTaken'),
+    stars = document.getElementsByClassName('fa fa-star'),
+    leader = document.getElementById('leader'),
+    clearLeader = document.getElementById('clearLeader'),
+    localValue, localData;
 
 clearLeader.addEventListener('click', function () {
     window.localStorage.removeItem('Leader');
