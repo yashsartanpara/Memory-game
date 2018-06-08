@@ -19,7 +19,7 @@ let clearLeader = document.getElementById('clearLeader');
 let localValue, localData;
 
 clearLeader.addEventListener('click', function () {
-    window.localStorage.removeItem('Leader')
+    window.localStorage.removeItem('Leader');
     leader.innerHTML = 'Cleared';
 });
 
@@ -55,7 +55,7 @@ function gameInit() {
 // Start the Game
 
     function gameStart() {
-        let allIcons = document.getElementsByClassName('card')
+        let allIcons = document.getElementsByClassName('card');
         for (let j = 0; j < allIcons.length; j++) {
             allIcons[j].onclick = function () {
                 cardOpen(allIcons[j].childNodes[0]);
@@ -85,7 +85,7 @@ function gameInit() {
 
 // Add card to Opened card List
     function addToOpen(currentIcon) {
-        openCards.push(currentIcon)
+        openCards.push(currentIcon);
     }
 
 // Check if both cards are same or not
@@ -136,10 +136,10 @@ function gameInit() {
     function moveCounter() {
         moves++;
         if (moves > 16 && moves <= 20) {
-            stars[2].style.color = 'gray'
+            stars[2].style.color = 'gray';
         }
         else if (moves > 20) {
-            stars[1].style.color = 'gray'
+            stars[1].style.color = 'gray';
         }
         moveDisplay.innerHTML = moves;
     }
@@ -147,7 +147,6 @@ function gameInit() {
 // Matched pair counter
     function matchCounter() {
         match++;
-        console.log(match);
         if (match === 8) {
             clearInterval(timer);
             displayResult();
@@ -161,10 +160,10 @@ function gameInit() {
         totalMoves.innerHTML = 'Total moves : ' + moves;
         timeTaken.innerHTML = 'Time : ' + currentTime;
         if (localValue === null) {
-            leader.innerHTML = 'Leader : ' + moves + ' moves.'
+            leader.innerHTML = 'Leader : ' + moves + ' moves.';
         }
         else {
-            leader.innerHTML = 'Leader : ' + localValue + ' moves.'
+            leader.innerHTML = 'Leader : ' + localValue + ' moves.';
         }
     }
 
@@ -236,10 +235,8 @@ function restartGame() {
 
 function saveToLocal(moves) {
     localData = window.localStorage.getItem("Leader");
-    console.log(localData);
     if (localData > moves || localData === null) {
         window.localStorage.setItem("Leader", moves);
     }
-    console.log(localData);
     return localData;
 }
