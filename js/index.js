@@ -13,8 +13,15 @@ let playAgain = document.getElementById('playAgain');
 let result = document.getElementById('result');
 let totalMoves = document.getElementById('totalMoves');
 let timeTaken = document.getElementById('timeTaken');
-let stars = document.getElementsByClassName('fa fa-star')
+let stars = document.getElementsByClassName('fa fa-star');
+let leader = document.getElementById('leader');
+let clearLeader = document.getElementById('clearLeader');
+let localValue, localData;
 
+clearLeader.addEventListener('click', function () {
+    window.localStorage.removeItem('Leader')
+    leader.innerHTML = 'Cleared';
+});
 
 restart.addEventListener('click', restartGame);
 playAgain.addEventListener('click', function () {
@@ -48,7 +55,6 @@ function gameInit() {
 // Start the Game
 
     function gameStart() {
-        console.log(openCards);
         let allIcons = document.getElementsByClassName('card')
         for (let j = 0; j < allIcons.length; j++) {
             allIcons[j].onclick = function () {
@@ -60,7 +66,6 @@ function gameInit() {
 
 // Open Clicked Card
     function cardOpen(currentIcon) {
-        console.log(openCards);
         if (openCards.length === 0) {
             currentIcon.parentNode.style.transform = 'rotateY(180deg)';
             currentIcon.classList.remove('hide');
@@ -98,9 +103,17 @@ function gameInit() {
 // Lock Matched cards
     function lockCards() {
         openCards[0].classList.add('match');
+        openCards[0].classList.remove('rotated');
         openCards[0].parentNode.style.pointerEvents = 'none';
+        openCards[0].parentNode.style.transform = 'rotateY(0deg)';
+        openCards[0].parentNode.classList.add('cardMatch');
+        openCards[0].parentNode.classList.add('match-animation');
+        openCards[1].classList.remove('rotated');
         openCards[1].classList.add('match');
+        openCards[1].parentNode.style.transform = 'rotateY(0deg)';
         openCards[1].parentNode.style.pointerEvents = 'none';
+        openCards[1].parentNode.classList.add('cardMatch');
+        openCards[1].parentNode.classList.add('match-animation');
         clearOpenCards();
     }
 
@@ -143,10 +156,16 @@ function gameInit() {
 
 // Open modal when user wins
     function displayResult() {
+        localValue = saveToLocal(moves);
         result.style.display = 'flex';
-        totalMoves.innerHTML = 'Total moves' + moves;
-        timeTaken.innerHTML = 'Time' + currentTime;
-
+        totalMoves.innerHTML = 'Total moves : ' + moves;
+        timeTaken.innerHTML = 'Time : ' + currentTime;
+        if (localValue === null) {
+            leader.innerHTML = 'Leader : ' + moves + ' moves.'
+        }
+        else {
+            leader.innerHTML = 'Leader : ' + localValue + ' moves.'
+        }
     }
 
 // Timer initialization
@@ -208,6 +227,19 @@ function restartGame() {
     clearTimeout(timeOut);
     for (let a = 0; a < allCards.length; a++) {
         allCards[a].style = null;
+        allCards[a].classList.remove('cardMatch');
+        allCards[a].classList.remove('match-animation');
+
     }
     gameInit();
+}
+
+function saveToLocal(moves) {
+    localData = window.localStorage.getItem("Leader");
+    console.log(localData);
+    if (localData > moves || localData === null) {
+        window.localStorage.setItem("Leader", moves);
+    }
+    console.log(localData);
+    return localData;
 }

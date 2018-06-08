@@ -18,6 +18,15 @@ body {
     color: white;
 }
 
+.cardMatch {
+    background-color: #00a1f1 !important;
+}
+
+.match-animation {
+    animation: shake 0.5s;
+    animation-iteration-count: 1;
+}
+
 .match {
     display: block !important;
 }
@@ -116,4 +125,26 @@ body {
 
 #reset {
     cursor: pointer;
+}
+
+#clearLeader {
+    background-color: white;
+    color: #333333;
+    border: none;
+    border-radius: 10px;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px);
+    }
+    30% {
+        transform: translate(-1px, -1px);
+    }
+    60% {
+        transform: translate(1px, 1px);
+    }
+    100% {
+        transform: translate(-1px, -1px);
+    }
 }
