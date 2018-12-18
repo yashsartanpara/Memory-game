@@ -16,4 +16,4 @@ Instructions-
 * You can check your score and check and reset local leader score on the End screen.
  
 
-https://memorygame.captaintorch.tech
+https://memorygame.captaintorch.me
